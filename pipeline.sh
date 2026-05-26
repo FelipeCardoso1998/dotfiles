@@ -76,7 +76,7 @@ case "$MODE" in
     ;;
 
   codex)
-    codex --approval-mode full-auto "$TASK"
+    codex exec --dangerously-bypass-approvals-and-sandbox "$TASK"
     ;;
 
   pipeline)
@@ -99,7 +99,7 @@ Quando terminar, escreva em $CLAUDE_OUT:
 HANDOFF DO BACKEND — use estes contratos exatamente:
 $(cat "$CLAUDE_OUT")"
     fi
-    codex --approval-mode full-auto "$CODEX_FULL"
+    codex exec --dangerously-bypass-approvals-and-sandbox "$CODEX_FULL"
     ;;
 
 esac
